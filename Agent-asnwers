@@ -1,0 +1,38 @@
+code:
+
+import json
+# import warnings
+
+# warnings.filterwarnings(
+#     "ignore",
+#     message=r"^Core Pydantic V1 functionality isn't compatible with Python 3\.14 or greater\.$",
+#     category=UserWarning,
+#     module=r"^langchain_core\.utils\.pydantic$",
+# )
+
+from langchain_openai import ChatOpenAI
+from langchain_core.messages import SystemMessage, HumanMessage
+
+from dataforai import BASE_URL
+from dataforai import API_KEY
+from dataforai import MODEL
+from dataforai import SYSTEM_PROMPT
+from dataforai import question
+from dataforai import data
+
+
+llm = ChatOpenAI(model=MODEL, 
+                timeout=20,
+                max_retries=1,
+                api_key=API_KEY,
+                base_url=BASE_URL)
+
+    
+answer = llm.invoke([SystemMessage(content=f'{SYSTEM_PROMPT}'),
+                    HumanMessage(content=f"Вопрос пользователя:\n{question}\n\n"
+                                 f"Материалы (data, JSON):\n{json.dumps(data, ensure_ascii=False)}")])
+
+print(answer.content)
+
+#data - то что передают другие агенты
+
