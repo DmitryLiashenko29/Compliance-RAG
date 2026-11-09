@@ -63,3 +63,63 @@ ROUTER_PROMPT = ChatPromptTemplate.from_messages([
     ("ai", "all"),
     ("human", "Вопрос: {question}"),
 ])
+
+class RetrieverAgent:
+    def __init__(self, chunks):
+        for chunk in chunks:
+            for key in (DOC_KEY, VERSION_KEY, CLAUSE_KEY):
+                assert key in chunk.metadata, f"В metadata нет поля {key!r}"
+
+        self.store = InMemoryVectorStore(embedding=embeddings)
+        self.store.add_documents(chunks)
+
+        # Самая свежая версия каждого документа.
+        self.latest = {}
+        for chunk in chunks:
+            name, version = chunk.metadata[DOC_KEY], chunk.metadata[VERSION_KEY]
+            self.latest[name] = max(version, self.latest.get(name, version))
+
+        self.router = ROUTER_PROMPT | llm | StrOutputParser()
+
+    def search(self, query, k=4, mode="latest", document=None):
+        """Поиск фрагментов. mode: "latest" - только свежие версии, "all" - все версии."""
+        if mode not in ("latest", "all"):
+            raise ValueError("mode должен быть 'latest' или 'all'")
+
+        def keep(doc):
+            name = doc.metadata[DOC_KEY]
+            if document and name != document:
+                return False
+            return mode == "all" or doc.metadata[VERSION_KEY] == self.latest[name]
+
+        pairs = self.store.similarity_search_with_score(query, k=k, filter=keep)
+        return [
+            {
+                "text": doc.page_content,
+                "document": doc.metadata[DOC_KEY],
+                "version": doc.metadata[VERSION_KEY],
+                "clause": doc.metadata[CLAUSE_KEY],
+                "score": round(score, 3),
+            }
+            for doc, score in pairs
+        ]
+    
+    def route(self, question):
+        try:
+            label = self.router.invoke({"question": question})
+        except openai.APIError:
+            return "all"
+        label = label.strip(" .\n\"'`").lower()
+        return label if label in ("latest", "all") else "all"
+
+    def run(self, subqueries, k=4, mode=None):
+        """Точка входа для Planner и Критика.
+
+        mode=None - режим выбирает маршрутизатор; mode="all" - принудительно
+        искать по всем версиям (например, когда Критик проверяет конфликт версий).
+        """
+        results = {}
+        for query in subqueries:
+            used_mode = mode or self.route(query)
+            results[query] = {"mode": used_mode, "hits": self.search(query, k=k, mode=used_mode)}
+        return results
