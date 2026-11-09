@@ -123,3 +123,26 @@ class RetrieverAgent:
             used_mode = mode or self.route(query)
             results[query] = {"mode": used_mode, "hits": self.search(query, k=k, mode=used_mode)}
         return results
+
+def demo_chunks():
+    """ТЕСТОВАЯ ЗАГЛУШКА для проверки кода. Реальные чанки приходят от Агента Документов."""
+    def make(text, version, clause):
+        return Document(
+            page_content=text,
+            metadata={DOC_KEY: "test-policy", VERSION_KEY: version, CLAUSE_KEY: clause},
+        )
+
+    return [
+        make("Логи хранятся 30 дней.", "2023-01-01", "4.1"),
+        make("Логи хранятся 90 дней.", "2024-01-01", "4.1"),
+        make("Оплата возможна банковской картой.", "2024-01-01", "2.3"),
+    ]
+
+
+if __name__ == "__main__":
+    agent = RetrieverAgent(demo_chunks())
+    found = agent.run(["Сколько дней хранятся логи сейчас?", "Что изменилось в сроке хранения логов?"], k=2)
+    for query, result in found.items():
+        print(f"\n{query} -> режим: {result['mode']}")
+        for hit in result["hits"]:
+            print(f"  {hit['document']} | версия {hit['version']} | п. {hit['clause']} | {hit['score']} | {hit['text']}")
