@@ -1,0 +1,925 @@
+{
+  "title": "Compliance RAG — материалы Критика к КП2",
+  "prepared_at": "2026-11-10",
+  "status": "Подготовленный набор. Требует проверки командой и включения выбранных текстов в корпус. Результаты модели не измерены.",
+  "scope": "Корпус набора определяется объединением включённых диапазонов строк evidence для четырёх фиксированных снимков sources. Исходные тексты доступны по ссылкам; в пакет включена разметка и адреса источников. Ссылки внутри исходников не входят в корпус. Для запуска необходимо загрузить указанные диапазоны, сохранив source_id и ID фрагмента.",
+  "version_identity": "Использовать source_id или полный commit SHA. Дата без времени не уникальна: Y1 и Y2 сохранены в один день.",
+  "sources": [
+    {
+      "id": "R1",
+      "service": "Reddit",
+      "document": "Reddit/Community Guidelines.md",
+      "commit": "aadf0e11ed449a10f83b93e7c7164d5c812e8208",
+      "recorded_at_utc": "2025-10-23T12:38:16Z",
+      "url": "https://github.com/OpenTermsArchive/pga-versions/blob/aadf0e11ed449a10f83b93e7c7164d5c812e8208/Reddit/Community%20Guidelines.md",
+      "date_semantics": "Время записи коммита архива. Не дата вступления правил в силу."
+    },
+    {
+      "id": "R2",
+      "service": "Reddit",
+      "document": "Reddit/Community Guidelines.md",
+      "commit": "735fc4b354bddca24cac45f74c4a78184daae3fc",
+      "recorded_at_utc": "2026-11-06T00:52:52Z",
+      "url": "https://github.com/OpenTermsArchive/pga-versions/blob/735fc4b354bddca24cac45f74c4a78184daae3fc/Reddit/Community%20Guidelines.md",
+      "date_semantics": "Время записи коммита архива. Не дата вступления правил в силу."
+    },
+    {
+      "id": "Y1",
+      "service": "YouTube",
+      "document": "YouTube/Community Guidelines.md",
+      "commit": "d6ddd0003c305ba46d51eada405888556cccc54b",
+      "recorded_at_utc": "2023-06-02T06:35:04Z",
+      "url": "https://github.com/OpenTermsArchive/pga-versions/blob/d6ddd0003c305ba46d51eada405888556cccc54b/YouTube/Community%20Guidelines.md",
+      "date_semantics": "Время записи коммита архива. Не дата вступления правил в силу."
+    },
+    {
+      "id": "Y2",
+      "service": "YouTube",
+      "document": "YouTube/Community Guidelines.md",
+      "commit": "30e6af989d9b8656fddad0dbb4086b2efa3e3a0c",
+      "recorded_at_utc": "2023-06-02T18:35:13Z",
+      "url": "https://github.com/OpenTermsArchive/pga-versions/blob/30e6af989d9b8656fddad0dbb4086b2efa3e3a0c/YouTube/Community%20Guidelines.md",
+      "date_semantics": "Время записи коммита архива. Не дата вступления правил в силу."
+    }
+  ],
+  "evidence": [
+    {
+      "id": "R1_rule2",
+      "source_id": "R1",
+      "section": "Rules / Rule 2",
+      "source_line_start": 19,
+      "source_line_end": 21,
+      "url": "https://github.com/OpenTermsArchive/pga-versions/blob/aadf0e11ed449a10f83b93e7c7164d5c812e8208/Reddit/Community%20Guidelines.md#L19-L21"
+    },
+    {
+      "id": "R1_rule3",
+      "source_id": "R1",
+      "section": "Rules / Rule 3",
+      "source_line_start": 23,
+      "source_line_end": 25,
+      "url": "https://github.com/OpenTermsArchive/pga-versions/blob/aadf0e11ed449a10f83b93e7c7164d5c812e8208/Reddit/Community%20Guidelines.md#L23-L25"
+    },
+    {
+      "id": "R1_rule5",
+      "source_id": "R1",
+      "section": "Rules / Rule 5",
+      "source_line_start": 31,
+      "source_line_end": 33,
+      "url": "https://github.com/OpenTermsArchive/pga-versions/blob/aadf0e11ed449a10f83b93e7c7164d5c812e8208/Reddit/Community%20Guidelines.md#L31-L33"
+    },
+    {
+      "id": "R1_rule6",
+      "source_id": "R1",
+      "section": "Rules / Rule 6",
+      "source_line_start": 35,
+      "source_line_end": 37,
+      "url": "https://github.com/OpenTermsArchive/pga-versions/blob/aadf0e11ed449a10f83b93e7c7164d5c812e8208/Reddit/Community%20Guidelines.md#L35-L37"
+    },
+    {
+      "id": "R1_rule8",
+      "source_id": "R1",
+      "section": "Rules / Rule 8",
+      "source_line_start": 43,
+      "source_line_end": 45,
+      "url": "https://github.com/OpenTermsArchive/pga-versions/blob/aadf0e11ed449a10f83b93e7c7164d5c812e8208/Reddit/Community%20Guidelines.md#L43-L45"
+    },
+    {
+      "id": "R1_enforcement",
+      "source_id": "R1",
+      "section": "Enforcement",
+      "source_line_start": 47,
+      "source_line_end": 57,
+      "url": "https://github.com/OpenTermsArchive/pga-versions/blob/aadf0e11ed449a10f83b93e7c7164d5c812e8208/Reddit/Community%20Guidelines.md#L47-L57"
+    },
+    {
+      "id": "R1_harassment",
+      "source_id": "R1",
+      "section": "Разъяснение Rule 1 / harassment",
+      "source_line_start": 61,
+      "source_line_end": 67,
+      "url": "https://github.com/OpenTermsArchive/pga-versions/blob/aadf0e11ed449a10f83b93e7c7164d5c812e8208/Reddit/Community%20Guidelines.md#L61-L67"
+    },
+    {
+      "id": "R1_spam",
+      "source_id": "R1",
+      "section": "Разъяснение Rule 2 / spam",
+      "source_line_start": 114,
+      "source_line_end": 152,
+      "url": "https://github.com/OpenTermsArchive/pga-versions/blob/aadf0e11ed449a10f83b93e7c7164d5c812e8208/Reddit/Community%20Guidelines.md#L114-L152"
+    },
+    {
+      "id": "R1_disruption",
+      "source_id": "R1",
+      "section": "Разъяснение Rule 2 / disruptive behaviors",
+      "source_line_start": 156,
+      "source_line_end": 196,
+      "url": "https://github.com/OpenTermsArchive/pga-versions/blob/aadf0e11ed449a10f83b93e7c7164d5c812e8208/Reddit/Community%20Guidelines.md#L156-L196"
+    },
+    {
+      "id": "R1_privacy",
+      "source_id": "R1",
+      "section": "Разъяснение Rule 3 / personal information",
+      "source_line_start": 200,
+      "source_line_end": 206,
+      "url": "https://github.com/OpenTermsArchive/pga-versions/blob/aadf0e11ed449a10f83b93e7c7164d5c812e8208/Reddit/Community%20Guidelines.md#L200-L206"
+    },
+    {
+      "id": "R1_impersonation",
+      "source_id": "R1",
+      "section": "Разъяснение Rule 5 / impersonation",
+      "source_line_start": 268,
+      "source_line_end": 318,
+      "url": "https://github.com/OpenTermsArchive/pga-versions/blob/aadf0e11ed449a10f83b93e7c7164d5c812e8208/Reddit/Community%20Guidelines.md#L268-L318"
+    },
+    {
+      "id": "R1_site",
+      "source_id": "R1",
+      "section": "Разъяснение Rule 8 / normal use and API",
+      "source_line_start": 374,
+      "source_line_end": 374,
+      "url": "https://github.com/OpenTermsArchive/pga-versions/blob/aadf0e11ed449a10f83b93e7c7164d5c812e8208/Reddit/Community%20Guidelines.md#L374-L374"
+    },
+    {
+      "id": "R2_rule2",
+      "source_id": "R2",
+      "section": "Rules / Rule 2",
+      "source_line_start": 19,
+      "source_line_end": 21,
+      "url": "https://github.com/OpenTermsArchive/pga-versions/blob/735fc4b354bddca24cac45f74c4a78184daae3fc/Reddit/Community%20Guidelines.md#L19-L21"
+    },
+    {
+      "id": "R2_rule3",
+      "source_id": "R2",
+      "section": "Rules / Rule 3",
+      "source_line_start": 23,
+      "source_line_end": 25,
+      "url": "https://github.com/OpenTermsArchive/pga-versions/blob/735fc4b354bddca24cac45f74c4a78184daae3fc/Reddit/Community%20Guidelines.md#L23-L25"
+    },
+    {
+      "id": "R2_rule5",
+      "source_id": "R2",
+      "section": "Rules / Rule 5",
+      "source_line_start": 31,
+      "source_line_end": 33,
+      "url": "https://github.com/OpenTermsArchive/pga-versions/blob/735fc4b354bddca24cac45f74c4a78184daae3fc/Reddit/Community%20Guidelines.md#L31-L33"
+    },
+    {
+      "id": "R2_rule6",
+      "source_id": "R2",
+      "section": "Rules / Rule 6",
+      "source_line_start": 35,
+      "source_line_end": 37,
+      "url": "https://github.com/OpenTermsArchive/pga-versions/blob/735fc4b354bddca24cac45f74c4a78184daae3fc/Reddit/Community%20Guidelines.md#L35-L37"
+    },
+    {
+      "id": "R2_rule8",
+      "source_id": "R2",
+      "section": "Rules / Rule 8",
+      "source_line_start": 43,
+      "source_line_end": 45,
+      "url": "https://github.com/OpenTermsArchive/pga-versions/blob/735fc4b354bddca24cac45f74c4a78184daae3fc/Reddit/Community%20Guidelines.md#L43-L45"
+    },
+    {
+      "id": "R2_enforcement",
+      "source_id": "R2",
+      "section": "Enforcement",
+      "source_line_start": 47,
+      "source_line_end": 57,
+      "url": "https://github.com/OpenTermsArchive/pga-versions/blob/735fc4b354bddca24cac45f74c4a78184daae3fc/Reddit/Community%20Guidelines.md#L47-L57"
+    },
+    {
+      "id": "R2_harassment",
+      "source_id": "R2",
+      "section": "Разъяснение Rule 1 / harassment",
+      "source_line_start": 61,
+      "source_line_end": 102,
+      "url": "https://github.com/OpenTermsArchive/pga-versions/blob/735fc4b354bddca24cac45f74c4a78184daae3fc/Reddit/Community%20Guidelines.md#L61-L102"
+    },
+    {
+      "id": "R2_spam",
+      "source_id": "R2",
+      "section": "Разъяснение Rule 2 / spam",
+      "source_line_start": 223,
+      "source_line_end": 260,
+      "url": "https://github.com/OpenTermsArchive/pga-versions/blob/735fc4b354bddca24cac45f74c4a78184daae3fc/Reddit/Community%20Guidelines.md#L223-L260"
+    },
+    {
+      "id": "R2_disruption",
+      "source_id": "R2",
+      "section": "Разъяснение Rule 2 / disruptive behaviors",
+      "source_line_start": 264,
+      "source_line_end": 304,
+      "url": "https://github.com/OpenTermsArchive/pga-versions/blob/735fc4b354bddca24cac45f74c4a78184daae3fc/Reddit/Community%20Guidelines.md#L264-L304"
+    },
+    {
+      "id": "R2_privacy",
+      "source_id": "R2",
+      "section": "Разъяснение Rule 3 / personal information",
+      "source_line_start": 308,
+      "source_line_end": 350,
+      "url": "https://github.com/OpenTermsArchive/pga-versions/blob/735fc4b354bddca24cac45f74c4a78184daae3fc/Reddit/Community%20Guidelines.md#L308-L350"
+    },
+    {
+      "id": "R2_impersonation",
+      "source_id": "R2",
+      "section": "Разъяснение Rule 5 / impersonation",
+      "source_line_start": 459,
+      "source_line_end": 497,
+      "url": "https://github.com/OpenTermsArchive/pga-versions/blob/735fc4b354bddca24cac45f74c4a78184daae3fc/Reddit/Community%20Guidelines.md#L459-L497"
+    },
+    {
+      "id": "R2_site",
+      "source_id": "R2",
+      "section": "Разъяснение Rule 8 / normal use and API",
+      "source_line_start": 554,
+      "source_line_end": 574,
+      "url": "https://github.com/OpenTermsArchive/pga-versions/blob/735fc4b354bddca24cac45f74c4a78184daae3fc/Reddit/Community%20Guidelines.md#L554-L574"
+    },
+    {
+      "id": "Y1_elections",
+      "source_id": "Y1",
+      "section": "Elections misinformation policies",
+      "source_line_start": 1670,
+      "source_line_end": 1745,
+      "url": "https://github.com/OpenTermsArchive/pga-versions/blob/d6ddd0003c305ba46d51eada405888556cccc54b/YouTube/Community%20Guidelines.md#L1670-L1745"
+    },
+    {
+      "id": "Y2_elections",
+      "source_id": "Y2",
+      "section": "Elections misinformation policies",
+      "source_line_start": 1670,
+      "source_line_end": 1741,
+      "url": "https://github.com/OpenTermsArchive/pga-versions/blob/30e6af989d9b8656fddad0dbb4086b2efa3e3a0c/YouTube/Community%20Guidelines.md#L1670-L1741"
+    }
+  ],
+  "questions": [
+    {
+      "id": "Q01",
+      "type": "direct",
+      "family": "pseudonym",
+      "split": "holdout_candidate",
+      "question": "Можно ли использовать Reddit без настоящего имени по редакции R2?",
+      "reference_answer": "Да. Использование настоящего имени не обязательно, но запрещено вводить других в заблуждение относительно личности или принадлежности к организации.",
+      "required_evidence_ids": [
+        "R2_rule5",
+        "R2_impersonation"
+      ],
+      "grading_note": "Не превращать разрешение псевдонима в разрешение обманного представления.",
+      "expected_behavior": "answer",
+      "annotation_status": "prepared_from_sources_needs_team_review",
+      "checked_scope_source_ids": [],
+      "related_evidence_ids": []
+    },
+    {
+      "id": "Q02",
+      "type": "direct",
+      "family": "spam",
+      "split": "development",
+      "question": "Считается ли спамом только автоматическая массовая активность по редакции R2?",
+      "reference_answer": "Нет. Определение охватывает как автоматические, так и ручные повторяющиеся или нежелательные действия, которые негативно влияют на пользователей, сообщества или Reddit.",
+      "required_evidence_ids": [
+        "R2_spam"
+      ],
+      "grading_note": "Сохранить условие негативного влияния и различие между ручным и автоматическим действием.",
+      "expected_behavior": "answer",
+      "annotation_status": "prepared_from_sources_needs_team_review",
+      "checked_scope_source_ids": [],
+      "related_evidence_ids": []
+    },
+    {
+      "id": "Q03",
+      "type": "direct",
+      "family": "spam",
+      "split": "development",
+      "question": "К кому обратиться, если непонятно, считается ли публикация спамом в конкретном сообществе Reddit по R2?",
+      "reference_answer": "Проверить дополнительные правила сообщества и обратиться за разъяснением к его модераторам.",
+      "required_evidence_ids": [
+        "R2_spam"
+      ],
+      "grading_note": "Указать оба действия.",
+      "expected_behavior": "answer",
+      "annotation_status": "prepared_from_sources_needs_team_review",
+      "checked_scope_source_ids": [],
+      "related_evidence_ids": []
+    },
+    {
+      "id": "Q04",
+      "type": "direct",
+      "family": "disruption",
+      "split": "development",
+      "question": "Разрешает ли R2 только просматривать сообщество Reddit после блокировки в нём, без участия?",
+      "reference_answer": "Да. Просмотр без взаимодействия приведён как пример поведения, не нарушающего это правило.",
+      "required_evidence_ids": [
+        "R2_disruption"
+      ],
+      "grading_note": "Не расширять ответ на публикации и обход блокировки.",
+      "expected_behavior": "answer",
+      "annotation_status": "prepared_from_sources_needs_team_review",
+      "checked_scope_source_ids": [],
+      "related_evidence_ids": []
+    },
+    {
+      "id": "Q05",
+      "type": "direct",
+      "family": "privacy",
+      "split": "development",
+      "question": "Разрешает ли R2 публиковать личные данные человека только потому, что они уже доступны на другом сайте?",
+      "reference_answer": "Нет автоматического разрешения. Доступность в другом месте не делает публикацию допустимой, если она создаёт риск для безопасности человека.",
+      "required_evidence_ids": [
+        "R2_privacy"
+      ],
+      "grading_note": "Не смешивать личные данные с ограниченными исключениями для официальных профессиональных контактов.",
+      "expected_behavior": "answer",
+      "annotation_status": "prepared_from_sources_needs_team_review",
+      "checked_scope_source_ids": [],
+      "related_evidence_ids": []
+    },
+    {
+      "id": "Q06",
+      "type": "direct",
+      "family": "labels",
+      "split": "holdout_candidate",
+      "question": "Что требует Rule 6 в R2 от маркировки контента и сообществ Reddit?",
+      "reference_answer": "Нужно корректно маркировать контент и сообщества, особенно содержащие графические, сексуально откровенные или оскорбительные материалы.",
+      "required_evidence_ids": [
+        "R2_rule6"
+      ],
+      "grading_note": "Не выдумывать технический механизм или список обязательных тегов сверх источника.",
+      "expected_behavior": "answer",
+      "annotation_status": "prepared_from_sources_needs_team_review",
+      "checked_scope_source_ids": [],
+      "related_evidence_ids": []
+    },
+    {
+      "id": "Q07",
+      "type": "direct",
+      "family": "enforcement",
+      "split": "development",
+      "question": "Какие меры к аккаунтам перечислены в Enforcement редакции R2?",
+      "reference_answer": "Временная или постоянная приостановка аккаунта, снятие привилегий либо добавление ограничений. Перечень мер в документе открытый.",
+      "required_evidence_ids": [
+        "R2_enforcement"
+      ],
+      "grading_note": "Не утверждать, что это исчерпывающий список или обязательная последовательность.",
+      "expected_behavior": "answer",
+      "annotation_status": "prepared_from_sources_needs_team_review",
+      "checked_scope_source_ids": [],
+      "related_evidence_ids": []
+    },
+    {
+      "id": "Q08",
+      "type": "direct",
+      "family": "site",
+      "split": "development",
+      "question": "Можно ли по R2 создавать аккаунты Reddit автоматизированными или агентными средствами?",
+      "reference_answer": "Такое создание аккаунтов прямо включено в примеры нарушений разъяснения Rule 8.",
+      "required_evidence_ids": [
+        "R2_site"
+      ],
+      "grading_note": "Сослаться на расширенное разъяснение, а не только краткий Rule 8.",
+      "expected_behavior": "answer",
+      "annotation_status": "prepared_from_sources_needs_team_review",
+      "checked_scope_source_ids": [],
+      "related_evidence_ids": []
+    },
+    {
+      "id": "Q09",
+      "type": "multi_evidence",
+      "family": "pseudonym",
+      "split": "holdout_candidate",
+      "question": "Разрешены ли по R2 псевдоним и фан-аккаунт знаменитости, и где проходит граница допустимого?",
+      "reference_answer": "Псевдоним допустим. Фан-аккаунт допустим, если не присваивает личность знаменитости при общении. Обманное представление личности или связи с организацией запрещено; для фанатских и пародийных аккаунтов рекомендуется ясно обозначать назначение.",
+      "required_evidence_ids": [
+        "R2_rule5",
+        "R2_impersonation"
+      ],
+      "grading_note": "Не превращать рекомендацию раскрыть назначение аккаунта в безусловную формальную обязанность.",
+      "expected_behavior": "answer",
+      "annotation_status": "prepared_from_sources_needs_team_review",
+      "checked_scope_source_ids": [],
+      "related_evidence_ids": []
+    },
+    {
+      "id": "Q10",
+      "type": "multi_evidence",
+      "family": "spam",
+      "split": "development",
+      "question": "Как по R2 различаются спам и манипуляция голосами?",
+      "reference_answer": "Спам — повторяющиеся или нежелательные действия с негативным влиянием, в том числе массовые публикации. Манипуляция голосами включает искусственное изменение голосования через несколько аккаунтов, сервисы, автоматизацию или координацию группы. Оба поведения запрещены.",
+      "required_evidence_ids": [
+        "R2_spam",
+        "R2_disruption"
+      ],
+      "grading_note": "Нужны подтверждения обоих понятий.",
+      "expected_behavior": "answer",
+      "annotation_status": "prepared_from_sources_needs_team_review",
+      "checked_scope_source_ids": [],
+      "related_evidence_ids": []
+    },
+    {
+      "id": "Q11",
+      "type": "multi_evidence",
+      "family": "privacy",
+      "split": "development",
+      "question": "Можно ли по R2 публиковать официальный рабочий контакт публичного лица и одновременно его домашний адрес?",
+      "reference_answer": "Для официальных публичных профессиональных каналов связи предусмотрены ограниченные исключения. Они не распространяются на частную информацию, включая домашний адрес, и не разрешают травлю.",
+      "required_evidence_ids": [
+        "R2_rule3",
+        "R2_privacy"
+      ],
+      "grading_note": "Разделить официальный контакт и частные сведения.",
+      "expected_behavior": "answer",
+      "annotation_status": "prepared_from_sources_needs_team_review",
+      "checked_scope_source_ids": [],
+      "related_evidence_ids": []
+    },
+    {
+      "id": "Q12",
+      "type": "multi_evidence",
+      "family": "harassment",
+      "split": "development",
+      "question": "Разрешает ли R2 резко критиковать публичное лицо и преследовать его семью в ходе такой критики?",
+      "reference_answer": "Резкая критика публичной роли допустима. Кампании преследования семьи, угроза личной безопасности и подстрекательство к серьёзному вреду исключением не покрываются.",
+      "required_evidence_ids": [
+        "R2_harassment"
+      ],
+      "grading_note": "Проверить обе части вопроса по разным абзацам одного разъяснения.",
+      "expected_behavior": "answer",
+      "annotation_status": "prepared_from_sources_needs_team_review",
+      "checked_scope_source_ids": [],
+      "related_evidence_ids": []
+    },
+    {
+      "id": "Q13",
+      "type": "multi_evidence",
+      "family": "disruption",
+      "split": "development",
+      "question": "Разрешает ли R2 создать второй аккаунт для обхода блокировки сообщества и просто читать это сообщество без участия?",
+      "reference_answer": "Использовать другой аккаунт для обхода блокировки запрещено. Сам по себе просмотр контента заблокированного сообщества без взаимодействия приведён как допустимый пример.",
+      "required_evidence_ids": [
+        "R2_disruption"
+      ],
+      "grading_note": "Не объединять два разных действия в одно общее разрешение или запрет.",
+      "expected_behavior": "answer",
+      "annotation_status": "prepared_from_sources_needs_team_review",
+      "checked_scope_source_ids": [],
+      "related_evidence_ids": []
+    },
+    {
+      "id": "Q14",
+      "type": "multi_evidence",
+      "family": "site",
+      "split": "development",
+      "question": "Какие ограничения R2 описывает для приложения, которое показывает удалённый пользователем контент и рассылает незапрошенные сообщения автоматически?",
+      "reference_answer": "Продолжение использования или показа удалённого контента и автоматизация незапрошенных обращений указаны как нарушения. Приложения также должны регистрироваться и соблюдать перечисленные в источнике правила для разработчиков.",
+      "required_evidence_ids": [
+        "R2_site"
+      ],
+      "grading_note": "Покрыть оба действия. Не выдумывать срок удаления копий.",
+      "expected_behavior": "answer",
+      "annotation_status": "prepared_from_sources_needs_team_review",
+      "checked_scope_source_ids": [],
+      "related_evidence_ids": []
+    },
+    {
+      "id": "Q15",
+      "type": "version_change",
+      "family": "yt_integrity",
+      "split": "development",
+      "question": "Какие выборы прямо перечислены в Election integrity редакции Y1 и что изменилось в Y2?",
+      "reference_answer": "Y1 перечисляет любые прошедшие президентские выборы США, федеральные выборы Германии 2021 года и президентские выборы Бразилии 2014, 2018 и 2022 годов. В Y2 элемент про США удалён, элементы про Германию и Бразилию сохранены.",
+      "required_evidence_ids": [
+        "Y1_elections",
+        "Y2_elections"
+      ],
+      "grading_note": "Нужны обе версии. Изменение этого пункта не доказывает отмену всех правил о выборах.",
+      "expected_behavior": "answer",
+      "annotation_status": "prepared_from_sources_needs_team_review",
+      "checked_scope_source_ids": [],
+      "related_evidence_ids": []
+    },
+    {
+      "id": "Q16",
+      "type": "version_change",
+      "family": "yt_integrity",
+      "split": "development",
+      "question": "Сохранился ли в Y2 по сравнению с Y1 пример о ложных заявлениях относительно результата президентских выборов США 2020 года?",
+      "reference_answer": "Нет. Пример, прямо относящийся к ложному утверждению о сфальсифицированных или украденных выборах США 2020 года, присутствует в Y1 и удалён из Y2.",
+      "required_evidence_ids": [
+        "Y1_elections",
+        "Y2_elections"
+      ],
+      "grading_note": "Не отвечать по старой версии и не обобщать на весь политический контент.",
+      "expected_behavior": "answer",
+      "annotation_status": "prepared_from_sources_needs_team_review",
+      "checked_scope_source_ids": [],
+      "related_evidence_ids": []
+    },
+    {
+      "id": "Q17",
+      "type": "version_change",
+      "family": "yt_integrity",
+      "split": "development",
+      "question": "Убрали ли в Y2 весь пункт Election integrity вместе с упоминанием США?",
+      "reference_answer": "Нет. В Y2 сохранились правило и перечисление выборов Германии и Бразилии; удалены элемент списка про США и связанные примеры.",
+      "required_evidence_ids": [
+        "Y1_elections",
+        "Y2_elections"
+      ],
+      "grading_note": "Отклонить ложную предпосылку вопроса.",
+      "expected_behavior": "answer",
+      "annotation_status": "prepared_from_sources_needs_team_review",
+      "checked_scope_source_ids": [],
+      "related_evidence_ids": []
+    },
+    {
+      "id": "Q18",
+      "type": "version_change",
+      "family": "site",
+      "split": "development",
+      "question": "Как изменилось описание приложений и автоматизации в разъяснении Rule 8 между R1 и R2?",
+      "reference_answer": "R1 кратко запрещает нарушение работы сайта, вредоносный код, блокирование рекламных заголовков и программы, нарушающие API-правила. R2 раскрывает область применения для приложений, ботов и AI-агентов и добавляет явные пункты о регистрации, удалённом контенте, незапрошенной автоматической рассылке и автоматизированном создании аккаунтов.",
+      "required_evidence_ids": [
+        "R1_site",
+        "R2_site"
+      ],
+      "grading_note": "Отсутствие явного пункта в R1 не означает, что соответствующее действие тогда было разрешено.",
+      "expected_behavior": "answer",
+      "annotation_status": "prepared_from_sources_needs_team_review",
+      "checked_scope_source_ids": [],
+      "related_evidence_ids": []
+    },
+    {
+      "id": "Q19",
+      "type": "version_change",
+      "family": "privacy",
+      "split": "development",
+      "question": "Как изменились пояснения к исключениям для публичных лиц в правилах приватности между R1 и R2?",
+      "reference_answer": "В обеих редакциях есть ограниченное исключение для профессиональных контактов публичных лиц и запрет травли. R2 подробнее ограничивает исключение официальными публичными рабочими каналами и явно исключает частные сведения о самом лице и его семье.",
+      "required_evidence_ids": [
+        "R1_privacy",
+        "R2_privacy"
+      ],
+      "grading_note": "Описать уточнение и общий смысл. Не объявлять противоположными совместимые формулировки.",
+      "expected_behavior": "answer",
+      "annotation_status": "prepared_from_sources_needs_team_review",
+      "checked_scope_source_ids": [],
+      "related_evidence_ids": []
+    },
+    {
+      "id": "Q20",
+      "type": "version_change",
+      "family": "harassment",
+      "split": "development",
+      "question": "Какие дополнительные разъяснения о критике публичных лиц появились в R2 по сравнению с R1?",
+      "reference_answer": "R1 отделяет несогласие и отрицательные оценки от преследования. R2 подробнее описывает допустимую критику идей, организаций и публичных лиц и отдельно ограничивает кампании против семьи, личной безопасности и подстрекательство к серьёзному вреду.",
+      "required_evidence_ids": [
+        "R1_harassment",
+        "R2_harassment"
+      ],
+      "grading_note": "Назвать добавленные разъяснения без утверждения, что вся критика раньше запрещалась.",
+      "expected_behavior": "answer",
+      "annotation_status": "prepared_from_sources_needs_team_review",
+      "checked_scope_source_ids": [],
+      "related_evidence_ids": []
+    },
+    {
+      "id": "Q21",
+      "type": "version_same",
+      "family": "pseudonym",
+      "split": "holdout_candidate",
+      "question": "Изменилось ли между R1 и R2 правило об обязательности настоящего имени в Rule 5?",
+      "reference_answer": "Нет. В обеих редакциях настоящее имя не обязательно, а намеренное введение в заблуждение и обманное представление другого лица запрещены.",
+      "required_evidence_ids": [
+        "R1_rule5",
+        "R2_rule5"
+      ],
+      "grading_note": "Две версии сами по себе не образуют конфликт.",
+      "expected_behavior": "answer",
+      "annotation_status": "prepared_from_sources_needs_team_review",
+      "checked_scope_source_ids": [],
+      "related_evidence_ids": []
+    },
+    {
+      "id": "Q22",
+      "type": "version_same",
+      "family": "labels",
+      "split": "holdout_candidate",
+      "question": "Изменилась ли формулировка Rule 6 о маркировке контента между R1 и R2?",
+      "reference_answer": "Нет. Проверяемый текст Rule 6 в этих двух редакциях совпадает.",
+      "required_evidence_ids": [
+        "R1_rule6",
+        "R2_rule6"
+      ],
+      "grading_note": "Зафиксировать отсутствие изменения именно этого пункта.",
+      "expected_behavior": "answer",
+      "annotation_status": "prepared_from_sources_needs_team_review",
+      "checked_scope_source_ids": [],
+      "related_evidence_ids": []
+    },
+    {
+      "id": "Q23",
+      "type": "unanswerable",
+      "family": "enforcement",
+      "split": "development",
+      "question": "В течение скольких часов Reddit обязан рассмотреть жалобу на спам по материалам R2?",
+      "reference_answer": "В выбранных материалах R2 описан способ пожаловаться, но конкретный срок рассмотрения в часах отсутствует. Данных для такого срока недостаточно.",
+      "required_evidence_ids": [],
+      "grading_note": "Сослаться на границы выбранного корпуса. Не выдавать предположение за срок.",
+      "expected_behavior": "abstain",
+      "annotation_status": "prepared_from_sources_needs_team_review",
+      "checked_scope_source_ids": [
+        "R2"
+      ],
+      "related_evidence_ids": [
+        "R2_spam",
+        "R2_enforcement"
+      ]
+    },
+    {
+      "id": "Q24",
+      "type": "unanswerable",
+      "family": "site",
+      "split": "development",
+      "question": "Через сколько часов приложение обязано удалить локальную копию контента после его удаления пользователем по R2?",
+      "reference_answer": "R2 запрещает продолжать использование или показ удалённого контента, но точное число часов в выбранных материалах не указано.",
+      "required_evidence_ids": [],
+      "grading_note": "Отличить наличие требования от наличия числового срока.",
+      "expected_behavior": "abstain",
+      "annotation_status": "prepared_from_sources_needs_team_review",
+      "checked_scope_source_ids": [
+        "R2"
+      ],
+      "related_evidence_ids": [
+        "R2_site"
+      ]
+    },
+    {
+      "id": "Q25",
+      "type": "unanswerable",
+      "family": "enforcement",
+      "split": "development",
+      "question": "Каков фиксированный денежный штраф Reddit за нарушение Rule 5 в R2?",
+      "reference_answer": "В выбранных материалах не установлен фиксированный денежный штраф за такое нарушение. Данных для суммы недостаточно.",
+      "required_evidence_ids": [],
+      "grading_note": "Не выводить сумму из списка мер к аккаунтам.",
+      "expected_behavior": "abstain",
+      "annotation_status": "prepared_from_sources_needs_team_review",
+      "checked_scope_source_ids": [
+        "R2"
+      ],
+      "related_evidence_ids": [
+        "R2_rule5",
+        "R2_enforcement"
+      ]
+    },
+    {
+      "id": "Q26",
+      "type": "unanswerable",
+      "family": "yt_integrity",
+      "split": "development",
+      "question": "Какое максимальное число часов YouTube отводит на рассмотрение жалобы по Election integrity в Y2?",
+      "reference_answer": "В выбранном разделе Y2 есть указание сообщать о нарушениях, но максимальный срок рассмотрения жалобы в часах отсутствует.",
+      "required_evidence_ids": [],
+      "grading_note": "Не переходить к внешним страницам и не приписывать срок выбранному разделу.",
+      "expected_behavior": "abstain",
+      "annotation_status": "prepared_from_sources_needs_team_review",
+      "checked_scope_source_ids": [
+        "Y2"
+      ],
+      "related_evidence_ids": [
+        "Y2_elections"
+      ]
+    },
+    {
+      "id": "Q27",
+      "type": "unanswerable",
+      "family": "privacy",
+      "split": "development",
+      "question": "Какой размер компенсации положен пользователю за раскрытие его личной информации по выбранным материалам R2?",
+      "reference_answer": "Выбранные материалы запрещают раскрытие личных данных, но не устанавливают размер компенсации. Данных для расчёта или суммы недостаточно.",
+      "required_evidence_ids": [],
+      "grading_note": "Не подменять ответ внешними правовыми знаниями.",
+      "expected_behavior": "abstain",
+      "annotation_status": "prepared_from_sources_needs_team_review",
+      "checked_scope_source_ids": [
+        "R2"
+      ],
+      "related_evidence_ids": [
+        "R2_privacy"
+      ]
+    },
+    {
+      "id": "Q28",
+      "type": "ambiguous",
+      "family": "yt_integrity",
+      "split": "development",
+      "question": "Удалено ли упоминание президентских выборов США из Election integrity в версии YouTube от 2 июня 2023 года?",
+      "reference_answer": "Нужно уточнить редакцию или время снимка. В наборе есть два коммита за 2 июня 2023 года: Y1 содержит элемент про США, Y2 его уже не содержит.",
+      "required_evidence_ids": [
+        "Y1_elections",
+        "Y2_elections"
+      ],
+      "grading_note": "Запросить SHA/время либо явно описать оба снимка; не выбирать молча.",
+      "expected_behavior": "clarify",
+      "annotation_status": "prepared_from_sources_needs_team_review",
+      "checked_scope_source_ids": [],
+      "related_evidence_ids": []
+    },
+    {
+      "id": "Q29",
+      "type": "ambiguous",
+      "family": "scope",
+      "split": "development",
+      "question": "Можно ли это публиковать?",
+      "reference_answer": "Недостаточно условий вопроса. Нужно уточнить, какой материал, на какой платформе и по какой редакции требуется проверить.",
+      "required_evidence_ids": [],
+      "grading_note": "Уточнить запрос до содержательного вердикта.",
+      "expected_behavior": "clarify",
+      "annotation_status": "prepared_from_sources_needs_team_review",
+      "checked_scope_source_ids": [],
+      "related_evidence_ids": []
+    },
+    {
+      "id": "Q30",
+      "type": "ambiguous",
+      "family": "scope",
+      "split": "development",
+      "question": "Какие правила действуют сейчас?",
+      "reference_answer": "Нужно уточнить платформу и тему. Набор содержит исторические снимки и не подтверждает полноту действующих сегодня правил; следует указать эту границу.",
+      "required_evidence_ids": [],
+      "grading_note": "Не объявлять наиболее свежую загруженную редакцию действующей сегодня.",
+      "expected_behavior": "clarify",
+      "annotation_status": "prepared_from_sources_needs_team_review",
+      "checked_scope_source_ids": [],
+      "related_evidence_ids": []
+    }
+  ],
+  "critic_cases": [
+    {
+      "id": "C01",
+      "question_id": "Q01",
+      "provided_evidence_ids": [
+        "R2_rule5",
+        "R2_impersonation"
+      ],
+      "search_exhausted": false,
+      "expected_action": "pass",
+      "expected_version_relation": "none",
+      "expected_reason": "Доказательств для разрешения псевдонима и ограничения обмана достаточно."
+    },
+    {
+      "id": "C02",
+      "question_id": "Q10",
+      "provided_evidence_ids": [
+        "R2_spam"
+      ],
+      "search_exhausted": false,
+      "expected_action": "search_more",
+      "expected_version_relation": "unknown",
+      "expected_reason": "Нужны фрагменты о манипуляции голосами из R2."
+    },
+    {
+      "id": "C03",
+      "question_id": "Q15",
+      "provided_evidence_ids": [
+        "Y1_elections",
+        "Y2_elections"
+      ],
+      "search_exhausted": false,
+      "expected_action": "pass",
+      "expected_version_relation": "changed_scope",
+      "expected_reason": "Можно сопоставить обе редакции и точно описать удаление элемента про США."
+    },
+    {
+      "id": "C04",
+      "question_id": "Q15",
+      "provided_evidence_ids": [
+        "Y2_elections"
+      ],
+      "search_exhausted": false,
+      "expected_action": "search_more",
+      "expected_version_relation": "unknown",
+      "expected_reason": "Для ответа об изменении нужен соответствующий раздел Y1."
+    },
+    {
+      "id": "C05",
+      "question_id": "Q21",
+      "provided_evidence_ids": [
+        "R1_rule5",
+        "R2_rule5"
+      ],
+      "search_exhausted": false,
+      "expected_action": "pass",
+      "expected_version_relation": "same",
+      "expected_reason": "Текст проверяемого правила совпадает."
+    },
+    {
+      "id": "C06",
+      "question_id": "Q08",
+      "provided_evidence_ids": [
+        "R1_site"
+      ],
+      "search_exhausted": false,
+      "expected_action": "search_more",
+      "expected_version_relation": "unknown",
+      "expected_reason": "Вопрос относится к R2, а передано разъяснение R1."
+    },
+    {
+      "id": "C07",
+      "question_id": "Q23",
+      "provided_evidence_ids": [
+        "R2_spam"
+      ],
+      "search_exhausted": false,
+      "expected_action": "search_more",
+      "expected_version_relation": "unknown",
+      "expected_reason": "Срок рассмотрения не найден; запросить сведения именно о сроке."
+    },
+    {
+      "id": "C08",
+      "question_id": "Q23",
+      "provided_evidence_ids": [
+        "R2_spam",
+        "R2_enforcement"
+      ],
+      "search_exhausted": true,
+      "expected_action": "insufficient",
+      "expected_version_relation": "unknown",
+      "expected_reason": "Лимит поиска исчерпан; переданные материалы не подтверждают срок в часах."
+    },
+    {
+      "id": "C09",
+      "question_id": "Q28",
+      "provided_evidence_ids": [
+        "Y1_elections",
+        "Y2_elections"
+      ],
+      "search_exhausted": false,
+      "expected_action": "clarify",
+      "expected_version_relation": "changed_scope",
+      "expected_reason": "Две редакции имеют одну календарную дату; нужен SHA или время снимка. Допустим условный ответ по обеим версиям."
+    },
+    {
+      "id": "C10",
+      "question_id": "Q11",
+      "provided_evidence_ids": [
+        "R2_rule3"
+      ],
+      "search_exhausted": false,
+      "expected_action": "search_more",
+      "expected_version_relation": "unknown",
+      "expected_reason": "Краткий Rule 3 не раскрывает условия исключения для публичных профессиональных контактов."
+    },
+    {
+      "id": "C11",
+      "question_id": "Q15",
+      "provided_evidence_ids": [
+        "R2_disruption",
+        "R2_rule5"
+      ],
+      "search_exhausted": false,
+      "expected_action": "search_more",
+      "expected_version_relation": "unknown",
+      "expected_reason": "Переданы сведения о другой платформе и другой теме."
+    },
+    {
+      "id": "C12",
+      "question_id": "Q19",
+      "provided_evidence_ids": [
+        "R1_privacy",
+        "R2_privacy"
+      ],
+      "search_exhausted": false,
+      "expected_action": "pass",
+      "expected_version_relation": "clarification",
+      "expected_reason": "Исключение есть в обеих версиях, в R2 добавлены ограничения. Не помечать всё как неразрешимое противоречие."
+    }
+  ],
+  "labels": {
+    "actions": {
+      "pass": "Материалов достаточно",
+      "search_more": "Запросить недостающие материалы",
+      "insufficient": "Недостаточно после исчерпания поиска",
+      "clarify": "Нужно уточнение пользователя"
+    },
+    "version_relation": {
+      "none": "Сравнение версий не требуется",
+      "unknown": "Недостаточно данных для сравнения",
+      "same": "Правило совпадает",
+      "changed_scope": "Изменилась область применения",
+      "clarification": "Добавлены уточнения"
+    }
+  },
+  "evaluation": {
+    "no_runtime_results": true,
+    "holdout_note": "Группы pseudonym и labels выделены как кандидаты holdout. Весь пакет уже доступен разработчику; для слепой финальной оценки нужны дополнительные вопросы, подготовленные другим участником. Две версии и связанные перефразировки одной темы нельзя распределять случайно по train/test.",
+    "conflict_note": "Набор содержит изменения области применения и уточнения, а также случаи без изменений. Отдельных подтверждённых неразрешимых конфликтов для одной даты и области применения в нём нет. Нельзя считать все version_change настоящими противоречиями или заявлять по ним метрику поиска неразрешимых конфликтов."
+  },
+  "attribution": {
+    "database": "OpenTermsArchive/pga-versions, Platform Governance Archive",
+    "url": "https://github.com/OpenTermsArchive/pga-versions",
+    "license": "https://opendatacommons.org/licenses/by/1-0/",
+    "notice": "Contains information from OpenTermsArchive/pga-versions, made available under the ODC Attribution License. Original policy text belongs to its respective authors."
+  }
+}
